@@ -1,0 +1,16 @@
+{
+  "name": "rest-shop",
+  "version": "1.0.0",
+  "description": "A node.js RESTful API tutorial project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Laryssa Fagundes",
+  "license": "ISC"
+}
