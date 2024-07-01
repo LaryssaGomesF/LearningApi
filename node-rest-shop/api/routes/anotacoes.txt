@@ -1,0 +1,64 @@
+
+
+
+SHOW DATABASES;
+CREATE DATABASE (NOME);
+USE (nome);
+
+SHOW TABLES;
+
+CREATE TABLE usuarios(
+    nome VARCHAR(50),
+    email VARCHAR(100),
+    idade INT
+);
+
+
+INSERT INTO usuarios(
+nome, email,idade
+) VALUES(
+    "Laryssa Gomes", "laryssagomes118@outlook.com",22
+);
+
+DESCRIBE (nome);
+
+UPDATE usuario SET nome = "NOme de Teste" WHERE nome = "Laryssa Gomes";
+
+
+
+npm install express --save
+npm install nodemon -g 
+
+npm install --save sequelize
+npm install --save mysql2
+npm install -- save express-handlebars  //da funcionalidade para html
+npm install --save body-parser
+
+const Sequelize = require('sequelize')
+const sequelize = new Sequelize('teste', 'root', '1234',{
+    host:"localhost",
+    dialect:'mysql'
+})
+
+sequelize.authenticate().then(function(){
+    console.log("Conectado com sucesso!")
+}).catch(function(erro){
+    console.log("Falha ao se conectar:" + erro)
+})
+
+
+const Postagem = sequelize.define('postagens', {
+    titulo: {
+        type: Sequelize.STRING
+    },
+    conteudo: {
+        type: Sequelize.TEXT
+    }
+})
+
+//Postagem.sync({force: true})
+
+Postagem.create({
+    titulo: "Teste",
+    conteudo: "etc etc etc etc"
+})
